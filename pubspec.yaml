@@ -9,7 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  flutter_midi: ^1.0.2
   cupertino_icons: ^0.1.2
 
 dev_dependencies:
@@ -22,6 +22,7 @@ flutter:
 
   assets:
     - images/
+    - assets/
 
   fonts:
   - family: Pacifico
