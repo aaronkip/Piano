@@ -13,12 +13,13 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  FlutterMidi flutterMidi;
   @override
   initState() {
-    FlutterMidi.unmute();
+    flutterMidi.unmute();
     rootBundle.load("assets/Piano.sf2").then((sf2) {
-      FlutterMidi.prepare(sf2: sf2, name: "Piano.sf2");
-    })
+      flutterMidi.prepare(sf2: sf2, name: "Piano.sf2");
+    },);
     super.initState();
   }
 
@@ -131,7 +132,7 @@ class _MyAppState extends State<MyApp> {
               borderRadius: borderRadius,
               highlightColor: Colors.grey,
               onTap: (){},
-              onTapDown: (_) => FlutterMidi.playMidiNote(midi: midi),
+              onTapDown: (_) => flutterMidi.playMidiNote(midi: midi),
             ),
           ),
         ),
